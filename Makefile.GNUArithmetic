@@ -1,0 +1,11 @@
+# https://www.cmcrossroads.com/article/learning-gnu-make-functions-arithmetic
+
+LIST := foo “bar baz” bam
+all: ; @echo $(wordlist 2,4,$(LIST))
+
+two := x x
+    three := x x x
+    four := x x x x
+    five := x x x x x
+    six := x x x x x x
+    all: ; @echo $(call decode,$(call plus,$(five),$(six)))

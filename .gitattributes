@@ -1,0 +1,3 @@
+# For cross operating system portability, especially for shell scripts,
+# the following line is a must.
+*.sh eol=lf

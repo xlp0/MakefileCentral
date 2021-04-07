@@ -1,0 +1,15 @@
+x := $(shell pwd)
+QWD = $(subst /, ,$(x))
+xCount = $(words $(QWD))
+
+JPI=14
+JPJ=8
+
+#With Double-dollar
+JPIJ_1 = $(shell echo $$(( $(xCount) + $(xCount) )))
+
+#With 'expr'
+JPIJ_2 = $(shell expr $(xCount) + $(JPJ) )
+
+$(info Sum with Double-$$: $(JPIJ_1))
+$(info Sum with 'expr': $(JPIJ_2))

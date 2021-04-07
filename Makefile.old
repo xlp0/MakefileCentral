@@ -1,0 +1,27 @@
+
+
+CWD := $(shell cd -P -- '$(shell dirname -- "$0")' && pwd -P)
+# The following line was the original text in bash
+# LOWERCASE_CURRENTDIR="$(tr [A-Z] [a-z] <<< "${PWD##*/}")"
+# https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_8.html
+x := $(shell pwd)
+
+QWD = $(subst /, ,$(x))
+xCount = $(words $(QWD))
+half1 = $(word 1, $(QWD))
+half2 = $(word 2, $(QWD))
+half3 = $(word 3, $(QWD))
+half4 = $(word 4, $(QWD))
+half5 = $(word 5, $(QWD))
+half6 = $(word 6, $(QWD))
+
+V1 ?= one two three four
+V2 ?= bird stones parks bears
+COUNT := $(words $(V1))
+SEQUENCE := $(shell seq 1 $(COUNT))
+
+print:
+	echo $(xCount) show arithemtic results: $(info $(call add, $(xCount), $(xCount)))
+	
+#cwd:
+#	@echo $(half1), $(half2) ,$(half3), $(half4), $(half5), $(half6), total of $(QWD) 
